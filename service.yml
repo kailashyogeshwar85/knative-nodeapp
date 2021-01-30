@@ -12,8 +12,8 @@ spec:
         autoscaling.knative.dev/minScale: "0"
         autoscaling.knative.dev/maxScale: "4"
     spec:
-      serviceAccountName: knative-pull-images
+      serviceAccountName: knative-gcr-imagepull
       containers:
-        - image: ""
+        - image: "asia.gcr.io/knativelocal/nodeapp:latest"
           ports:
             - containerPort: 8080
