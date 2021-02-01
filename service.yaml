@@ -2,7 +2,7 @@ apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
   name: github-nodeapp
-  namespace: github-app
+  namespace: github-app-faas
   labels:
     serving.knative.dev/visibility: cluster-local
 spec:
