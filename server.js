@@ -19,7 +19,7 @@ app.post('/', async (request, reply) => {
 (async () => {
   try {
     await app.listen(process.env.PORT || 8080);
-    app.log.info(`server listening on ${app.server.address().port}`);
+    app.log.info(`Server listening on HOST ${process.env.HOST} PORT: ${process.env.PORT}`);
   } catch (err) {
     app.log.error(err);
     process.exit(1);

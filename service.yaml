@@ -2,18 +2,18 @@ apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
   name: github-nodeapp
-  namespace: github-deployment
+  namespace: github-app
   labels:
     serving.knative.dev/visibility: cluster-local
 spec:
   template:
     metadata:
       annotations:
-        autoscaling.knative.dev/minScale: "0"
+        autoscaling.knative.dev/minScale: "1"
         autoscaling.knative.dev/maxScale: "4"
     spec:
-      serviceAccountName: knative-gcr-imagepull
+      serviceAccountName: knative-gcr-imagepull-sa
       containers:
-        - image: "asia.gcr.io/knativelocal/nodeapp:latest"
+        - image: asia.gcr.io/knativelocal/nodeapp
           ports:
             - containerPort: 8080
